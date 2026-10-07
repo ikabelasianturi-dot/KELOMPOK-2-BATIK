@@ -1,0 +1,379 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #f4eee5;
+    --card: #fffaf3;
+    --dark: #241b16;
+    --text: #342923;
+    --muted: #82736a;
+    --border: #ddcdbb;
+
+    --accent: #9b302d;
+    --accent-dark: #76221f;
+    --gold: #c9944b;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(155, 48, 45, 0.08),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(201, 148, 75, 0.10),
+            transparent 30%
+        ),
+
+        var(--bg);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    padding: 30px 5%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.logo-small {
+    color: var(--accent);
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+header h1 {
+    margin: 7px 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 42px;
+
+    font-weight: normal;
+}
+
+header p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.badge {
+    padding: 10px 15px;
+
+    border-radius: 30px;
+
+    border: 1px solid #cdb99f;
+
+    background: #fff8ef;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+    width: 92%;
+
+    max-width: 1450px;
+
+    margin: 30px auto 50px;
+
+    display: grid;
+
+    grid-template-columns:
+        290px
+        minmax(450px, 1fr)
+        260px;
+
+    gap: 25px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+    padding: 20px;
+
+    background:
+        rgba(255, 250, 243, 0.92);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(70, 40, 20, 0.08);
+}
+
+.card-title {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   CONTROL
+========================================= */
+
+.control {
+    margin-bottom: 23px;
+}
+
+.control-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.value {
+    color: var(--accent);
+}
+
+
+/* =========================================
+   SELECT
+========================================= */
+
+select {
+    width: 100%;
+
+    padding: 12px 13px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: white;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+select:hover {
+    border-color: var(--accent);
+}
+
+select:focus {
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(155, 48, 45, 0.1);
+}
+
+
+/* =========================================
+   RANGE SLIDER
+========================================= */
+
+input[type="range"] {
+    width: 100%;
+
+    height: 5px;
+
+    accent-color: var(--accent);
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   COLOR PALETTE
+========================================= */
+
+.colors {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 7px;
+}
+
+.color {
+    width: 100%;
+
+    height: 40px;
+
+    padding: 0;
+
+    border:
+        2px solid transparent;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    transition:
+        0.2s transform,
+        0.2s box-shadow;
+}
+
+.color:hover {
+    transform: translateY(-2px);
+}
+
+.color.active {
+    border-color: #222;
+
+    box-shadow:
+        0 0 0 2px white,
+        0 0 0 4px #222;
+}
+
+
+/* =========================================
+   CHECKBOX OPTIONS
+========================================= */
+
+.options {
+    display: grid;
+
+    gap: 11px;
+}
+
+.option {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #51463e;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.option input {
+    width: 15px;
+
+    height: 15px;
+
+    accent-color: var(--accent);
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.buttons {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 9px;
+
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 10px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 11px;
+
+    background: white;
+
+    color: var(--text);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        0.2s transform,
+        0.2s background,
+        0.2s box-shadow;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    background: #f8eee3;
+
+    box-shadow:
+        0 5px 15px
+        rgba(50, 30, 20, 0.08);
+}
+
+button:active {
+    transform: translate
